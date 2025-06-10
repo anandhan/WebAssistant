@@ -50,7 +50,9 @@ class MainActivity : ComponentActivity() {
                     title: document.title,
                     text: document.body.innerText,
                     links: Array.from(document.getElementsByTagName('a')).map(a => a.href),
-                    headings: Array.from(document.getElementsByTagName('h1')).map(h => h.innerText)
+                    headings: Array.from(document.getElementsByTagName('h1')).map(h => h.innerText),
+                    paragraphs: Array.from(document.getElementsByTagName('p')).map(p => p.innerText),
+                    lists: Array.from(document.getElementsByTagName('ul')).map(ul => Array.from(ul.getElementsByTagName('li')).map(li => li.innerText))
                 };
                 Android.onContentReceived(JSON.stringify(content));
             }
@@ -226,6 +228,7 @@ fun WebAssistantScreen(
                                     val webContent = getWebContent()
                                     Log.d(TAG, "Sending request to OpenAI API")
                                     Log.d(TAG, "Web content length: ${webContent.length}")
+                                    Log.d(TAG, "Extracted web content: $webContent")
                                     
                                     val systemMessage = """
                                         You are a helpful assistant analyzing a webpage. 
