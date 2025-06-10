@@ -167,7 +167,7 @@ fun WebAssistantScreen(
 
                                     val response = networkService.aiService.processQuestion(
                                         AIRequest(
-                                            model = "gpt-4.1",
+                                            model = ConfigManager.getOpenAIModel(),
                                             messages = listOf(
                                                 Message("system", systemMessage),
                                                 Message("user", userInput)

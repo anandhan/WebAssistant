@@ -20,18 +20,15 @@ object ConfigManager {
                 Log.d(TAG, "Config properties loaded successfully")
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to load config.properties", e)
-            throw e
+            Log.e(TAG, "Error loading config.properties", e)
         }
     }
 
     fun getOpenAIApiKey(): String {
-        val key = properties?.getProperty("OPENAI_API_KEY")
-        if (key == null) {
-            Log.e(TAG, "API key not found in config.properties")
-            throw IllegalStateException("OpenAI API key not found in config.properties")
-        }
-        Log.d(TAG, "API key loaded successfully (length: ${key.length})")
-        return key
+        return properties?.getProperty("OPENAI_API_KEY") ?: ""
+    }
+
+    fun getOpenAIModel(): String {
+        return properties?.getProperty("OPENAI_MODEL", "gpt-4.1") ?: "gpt-4.1"
     }
 } 
