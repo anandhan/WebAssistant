@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.webassistant.app-mergeReleaseResources-53:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.example.webassistant.app-mergeReleaseResources-54:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
                     "source": "/Users/anandhansubbiah/.gradle/caches/transforms-4/eef6369c3c6086426b2c6c6c50288813/transformed/appcompat-1.6.1/res/values-xlarge-v4/values-xlarge-v4.xml",

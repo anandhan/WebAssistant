@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.webassistant.app-mergeDebugResources-55:/values-v16/values-v16.xml",
+            "outputFile": "com.example.webassistant.app-mergeDebugResources-56:/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "/Users/anandhansubbiah/.gradle/caches/transforms-4/92d59f9dbc51ca032dad1d074dc05b0a/transformed/core-1.12.0/res/values-v16/values-v16.xml",

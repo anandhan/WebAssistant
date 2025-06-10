@@ -13,7 +13,7 @@ interface AIService {
 }
 
 data class AIRequest(
-    val model: String = "gpt-3.5-turbo",
+    val model: String = "gpt-4.1",
     val messages: List<Message>,
     val temperature: Double = 0.7
 )
