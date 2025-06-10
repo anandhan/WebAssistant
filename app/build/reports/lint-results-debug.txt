@@ -1,0 +1,118 @@
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk 34
+        ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application runs on a version of Android that is more recent than
+   your targetSdkVersion specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdkVersion
+   is less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:46: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+    implementation 'androidx.core:core-ktx:1.12.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:47: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:48: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.11.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:49: Warning: A newer version of androidx.compose.ui:ui than 1.5.4 is available: 1.8.2 [GradleDependency]
+    implementation "androidx.compose.ui:ui:1.5.4"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:50: Warning: A newer version of androidx.compose.material:material than 1.5.4 is available: 1.8.2 [GradleDependency]
+    implementation "androidx.compose.material:material:1.5.4"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:51: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.4 is available: 1.8.2 [GradleDependency]
+    implementation "androidx.compose.ui:ui-tooling-preview:1.5.4"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:52: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.1 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:53: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+    implementation 'androidx.activity:activity-compose:1.8.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:57: Warning: A newer version of androidx.webkit:webkit than 1.8.0 is available: 1.14.0 [GradleDependency]
+    implementation 'androidx.webkit:webkit:1.8.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:60: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:61: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:62: Warning: A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2 [GradleDependency]
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.5.4"
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle:63: Warning: A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2 [GradleDependency]
+    debugImplementation "androidx.compose.ui:ui-tooling:1.5.4"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/MainActivity.kt:44: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
+                    settings.javaScriptEnabled = true
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetJavaScriptEnabled":
+   Your code should not invoke setJavaScriptEnabled if you are not sure that
+   your app really requires JavaScript support.
+
+   https://goo.gle/SetJavaScriptEnabled
+   https://developer.android.com/training/articles/security-tips
+
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/values/colors.xml:3: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
+    <color name="purple_200">#FFBB86FC</color>
+           ~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+0 errors, 18 warnings

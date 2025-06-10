@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="incidents">
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="267"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="267"/>
+    </incident>
+
+    <incident
+        id="SetJavaScriptEnabled"
+        severity="warning"
+        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/MainActivity.kt"
+            line="44"
+            column="21"
+            startOffset="1321"
+            endLine="44"
+            endColumn="54"
+            endOffset="1354"/>
+    </incident>
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 35"
+            oldString="34"
+            replacement="35"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="13"
+            column="9"
+            startOffset="235"
+            endLine="13"
+            endColumn="21"
+            endOffset="247"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="46"
+            column="20"
+            startOffset="928"
+            endLine="46"
+            endColumn="51"
+            endOffset="959"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="47"
+            column="20"
+            startOffset="979"
+            endLine="47"
+            endColumn="56"
+            endOffset="1015"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="48"
+            column="20"
+            startOffset="1035"
+            endLine="48"
+            endColumn="65"
+            endOffset="1080"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose.ui:ui than 1.5.4 is available: 1.8.2">
+        <fix-replace
+            description="Change to 1.8.2"
+            family="Update versions"
+            oldString="1.5.4"
+            replacement="1.8.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="49"
+            column="20"
+            startOffset="1100"
+            endLine="49"
+            endColumn="50"
+            endOffset="1130"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose.material:material than 1.5.4 is available: 1.8.2">
+        <fix-replace
+            description="Change to 1.8.2"
+            family="Update versions"
+            oldString="1.5.4"
+            replacement="1.8.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="50"
+            column="20"
+            startOffset="1150"
+            endLine="50"
+            endColumn="62"
+            endOffset="1192"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.4 is available: 1.8.2">
+        <fix-replace
+            description="Change to 1.8.2"
+            family="Update versions"
+            oldString="1.5.4"
+            replacement="1.8.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="51"
+            column="20"
+            startOffset="1212"
+            endLine="51"
+            endColumn="66"
+            endOffset="1258"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.1">
+        <fix-replace
+            description="Change to 2.9.1"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="52"
+            column="20"
+            startOffset="1278"
+            endLine="52"
+            endColumn="68"
+            endOffset="1326"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="53"
+            column="20"
+            startOffset="1346"
+            endLine="53"
+            endColumn="62"
+            endOffset="1388"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.webkit:webkit than 1.8.0 is available: 1.14.0">
+        <fix-replace
+            description="Change to 1.14.0"
+            family="Update versions"
+            oldString="1.8.0"
+            replacement="1.14.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="57"
+            column="20"
+            startOffset="1608"
+            endLine="57"
+            endColumn="50"
+            endOffset="1638"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="60"
+            column="31"
+            startOffset="1718"
+            endLine="60"
+            endColumn="62"
+            endOffset="1749"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="61"
+            column="31"
+            startOffset="1780"
+            endLine="61"
+            endColumn="75"
+            endOffset="1824"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2">
+        <fix-replace
+            description="Change to 1.8.2"
+            family="Update versions"
+            oldString="1.5.4"
+            replacement="1.8.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="62"
+            column="31"
+            startOffset="1855"
+            endLine="62"
+            endColumn="73"
+            endOffset="1897"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2">
+        <fix-replace
+            description="Change to 1.8.2"
+            family="Update versions"
+            oldString="1.5.4"
+            replacement="1.8.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="63"
+            column="25"
+            startOffset="1922"
+            endLine="63"
+            endColumn="63"
+            endOffset="1960"/>
+    </incident>
+
+</incidents>

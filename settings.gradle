@@ -1,0 +1,2 @@
+rootProject.name = "WebAssistant"
+include ':app' 
