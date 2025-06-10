@@ -5,6 +5,7 @@ import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.webkit.JavascriptInterface
+import android.webkit.WebSettings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -18,11 +19,21 @@ import kotlinx.coroutines.launch
 import com.example.webassistant.AIRequest
 import com.example.webassistant.Message
 
+// Add this at the top-level, outside any class
+fun formatUrl(url: String): String {
+    return if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        "https://$url"
+    } else {
+        url
+    }
+}
+
 class MainActivity : ComponentActivity() {
     private val TAG = "WebAssistant"
     private lateinit var networkService: NetworkService
     private var currentWebContent: String = ""
     var webView: WebView? = null
+    var onPageChanged: (() -> Unit)? = null
 
     inner class WebAppInterface {
         @JavascriptInterface
@@ -58,7 +69,8 @@ class MainActivity : ComponentActivity() {
             WebAssistantScreen(
                 networkService = networkService,
                 getWebContent = { currentWebContent },
-                onExtractContent = { extractWebContent() }
+                onExtractContent = { extractWebContent() },
+                onPageChanged = { onPageChanged?.invoke() }
             )
         }
     }
@@ -68,27 +80,81 @@ class MainActivity : ComponentActivity() {
 fun WebAssistantScreen(
     networkService: NetworkService,
     getWebContent: () -> String,
-    onExtractContent: () -> Unit
+    onExtractContent: () -> Unit,
+    onPageChanged: (() -> Unit) -> Unit
 ) {
     val TAG = "WebAssistant"
     var chatHistory by remember { mutableStateOf(listOf<Message>()) }
     var userInput by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
     var hasExtractedContent by remember { mutableStateOf(false) }
+    var urlInput by remember { mutableStateOf("https://www.att.com") }
+    var webView by remember { mutableStateOf<WebView?>(null) }
     val scope = rememberCoroutineScope()
+
+    // Set up page change callback
+    LaunchedEffect(Unit) {
+        onPageChanged {
+            hasExtractedContent = false
+            chatHistory = listOf()
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
+        // URL Input and Navigation
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            TextField(
+                value = urlInput,
+                onValueChange = { urlInput = it },
+                modifier = Modifier.weight(1f),
+                placeholder = { Text("Enter URL...") },
+                singleLine = true
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Button(
+                onClick = {
+                    webView?.loadUrl(formatUrl(urlInput))
+                    hasExtractedContent = false
+                    chatHistory = listOf()
+                }
+            ) {
+                Text("Go")
+            }
+        }
+
         // WebView
         AndroidView(
             factory = { context ->
                 WebView(context).apply {
-                    settings.javaScriptEnabled = true
-                    webViewClient = WebViewClient()
+                    settings.apply {
+                        javaScriptEnabled = true
+                        domStorageEnabled = true
+                        setSupportZoom(true)
+                        builtInZoomControls = true
+                        displayZoomControls = false
+                        loadWithOverviewMode = true
+                        useWideViewPort = true
+                        mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                    }
+                    webViewClient = object : WebViewClient() {
+                        override fun onPageFinished(view: WebView?, url: String?) {
+                            super.onPageFinished(view, url)
+                            Log.d(TAG, "Page finished loading: $url")
+                            hasExtractedContent = false
+                            chatHistory = listOf()
+                        }
+                    }
                     addJavascriptInterface((context as MainActivity).WebAppInterface(), "Android")
-                    loadUrl("https://www.att.com")
+                    loadUrl(formatUrl(urlInput))
                     (context as MainActivity).webView = this
+                    webView = this
                 }
             },
             modifier = Modifier
@@ -102,17 +168,17 @@ fun WebAssistantScreen(
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            // Extract Content Button
+            // Welcome Message
             if (!hasExtractedContent) {
-                Button(
-                    onClick = {
-                        onExtractContent()
-                        hasExtractedContent = true
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text("Extract Page Content")
-                }
+                Text(
+                    text = "Ask me about this website",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                )
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
@@ -142,16 +208,21 @@ fun WebAssistantScreen(
                     value = userInput,
                     onValueChange = { userInput = it },
                     modifier = Modifier.weight(1f),
-                    placeholder = { Text("Ask about the webpage content...") },
-                    enabled = hasExtractedContent
+                    placeholder = { Text("Ask about the webpage content...") }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
                     onClick = {
-                        if (userInput.isNotBlank() && hasExtractedContent) {
+                        if (userInput.isNotBlank()) {
                             scope.launch {
                                 isLoading = true
                                 try {
+                                    // Extract content if not already done
+                                    if (!hasExtractedContent) {
+                                        onExtractContent()
+                                        hasExtractedContent = true
+                                    }
+
                                     val webContent = getWebContent()
                                     Log.d(TAG, "Sending request to OpenAI API")
                                     Log.d(TAG, "Web content length: ${webContent.length}")
@@ -206,7 +277,7 @@ fun WebAssistantScreen(
                             }
                         }
                     },
-                    enabled = hasExtractedContent && userInput.isNotBlank()
+                    enabled = userInput.isNotBlank()
                 ) {
                     Text("Send")
                 }

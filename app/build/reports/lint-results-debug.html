@@ -179,7 +179,7 @@ document.getElementById(id).style.display = 'none';
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Lint Report: 21 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Jun 10 15:33:25 EDT 2025 by AGP (8.1.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Jun 10 15:41:40 EDT 2025 by AGP (8.1.0)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -480,15 +480,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:87</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
-<span class="lineno">  84 </span>  AndroidView(
-<span class="lineno">  85 </span>      factory = { context ->
-<span class="lineno">  86 </span>          WebView(context).apply {
-<span class="caretline"><span class="lineno">  87 </span>              <span class="warning">settings.javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  88 </span>              webViewClient = WebViewClient()
-<span class="lineno">  89 </span>              addJavascriptInterface((context <span class="keyword">as</span> MainActivity).WebAppInterface(), <span class="string">"Android"</span>)
-<span class="lineno">  90 </span>              loadUrl(<span class="string">"https://www.att.com"</span>)
-</pre>
+<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:137</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
+<span class="lineno"> 134 </span>            factory = { context ->
+<span class="lineno"> 135 </span>                WebView(context).apply {
+<span class="lineno"> 136 </span>                    settings.apply {
+<span class="caretline"><span class="lineno"> 137 </span>                        <span class="warning">javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 138 </span>                        domStorageEnabled = <span class="keyword">true</span>
+<span class="lineno"> 139 </span>                        setSupportZoom(<span class="keyword">true</span>)
+<span class="lineno"> 140 </span>                        builtInZoomControls = <span class="keyword">true</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationSetJavaScriptEnabled" style="display: none;">

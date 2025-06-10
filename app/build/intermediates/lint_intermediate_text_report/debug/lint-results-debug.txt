@@ -76,9 +76,9 @@
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/MainActivity.kt:87: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
-                    settings.javaScriptEnabled = true
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/MainActivity.kt:137: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
+                        javaScriptEnabled = true
+                        ~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "SetJavaScriptEnabled":
    Your code should not invoke setJavaScriptEnabled if you are not sure that

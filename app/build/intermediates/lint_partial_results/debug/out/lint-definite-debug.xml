@@ -35,12 +35,12 @@
         message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/MainActivity.kt"
-            line="87"
-            column="21"
-            startOffset="2876"
-            endLine="87"
-            endColumn="54"
-            endOffset="2909"/>
+            line="137"
+            column="25"
+            startOffset="4438"
+            endLine="137"
+            endColumn="49"
+            endOffset="4462"/>
     </incident>
 
     <incident
