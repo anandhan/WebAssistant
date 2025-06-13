@@ -32,7 +32,7 @@ class KnowledgeBaseManager(private val context: Context) {
         loadKnowledgeBase()
     }
 
-    private fun loadKnowledgeBase() {
+    internal fun loadKnowledgeBase() {
         try {
             val jsonString = context.assets.open("knowledge_base.json").bufferedReader().use { it.readText() }
             knowledgeBase = JSONObject(jsonString)

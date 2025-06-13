@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-31:12
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/9477d38130045a5d5945c7519d28b630/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
@@ -88,8 +88,8 @@ ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/And
 	android:name
 		ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:5:22-76
 application
-ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:7:5-25:19
-INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:7:5-25:19
+ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:7:5-30:19
+INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:7:5-30:19
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -142,6 +142,14 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:22:27-74
+activity#com.example.webassistant.WebViewActivity
+ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:26:9-29:57
+	android:exported
+		ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:28:13-37
+	android:theme
+		ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:29:13-54
+	android:name
+		ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:27:13-44
 uses-sdk
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml

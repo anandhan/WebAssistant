@@ -56,6 +56,9 @@ class WebViewActivity : AppCompatActivity() {
         sendButton = findViewById(R.id.sendButton)
         chatContainer = findViewById(R.id.chatContainer)
 
+        // Get URL from intent
+        val url = intent.getStringExtra("url") ?: "https://www.att.com"
+        
         // Configure WebView
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = object : WebViewClient() {
@@ -64,6 +67,7 @@ class WebViewActivity : AppCompatActivity() {
                 detectProvider(url)
             }
         }
+        webView.loadUrl(url)
 
         // Set up send button click listener
         sendButton.setOnClickListener {

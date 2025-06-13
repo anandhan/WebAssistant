@@ -128,12 +128,12 @@
         message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/MainActivity.kt"
-            line="155"
+            line="183"
             column="25"
-            startOffset="5564"
-            endLine="155"
+            startOffset="7081"
+            endLine="183"
             endColumn="49"
-            endOffset="5588"/>
+            endOffset="7105"/>
     </incident>
 
     <incident
@@ -142,12 +142,12 @@
         message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/WebViewActivity.kt"
-            line="40"
+            line="63"
             column="9"
-            startOffset="1387"
-            endLine="40"
+            startOffset="2597"
+            endLine="63"
             endColumn="50"
-            endOffset="1428"/>
+            endOffset="2638"/>
     </incident>
 
     <incident
@@ -156,12 +156,12 @@
         message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/WebViewActivity.kt"
-            line="224"
+            line="248"
             column="20"
-            startOffset="9084"
-            endLine="224"
+            startOffset="10323"
+            endLine="248"
             endColumn="39"
-            endOffset="9103"/>
+            endOffset="10342"/>
     </incident>
 
     <incident
@@ -432,6 +432,25 @@
     <incident
         id="GradleDependency"
         severity="warning"
+        message="A newer version of androidx.test:core than 1.5.0 is available: 1.6.1">
+        <fix-replace
+            description="Change to 1.6.1"
+            family="Update versions"
+            oldString="1.5.0"
+            replacement="1.6.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="67"
+            column="24"
+            startOffset="2177"
+            endLine="67"
+            endColumn="50"
+            endOffset="2203"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
         message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
         <fix-replace
             description="Change to 1.2.1"
@@ -440,12 +459,12 @@
             replacement="1.2.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="65"
+            line="69"
             column="31"
-            startOffset="2063"
-            endLine="65"
+            startOffset="2294"
+            endLine="69"
             endColumn="62"
-            endOffset="2094"/>
+            endOffset="2325"/>
     </incident>
 
     <incident
@@ -459,12 +478,12 @@
             replacement="3.6.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="66"
+            line="70"
             column="31"
-            startOffset="2125"
-            endLine="66"
+            startOffset="2356"
+            endLine="70"
             endColumn="75"
-            endOffset="2169"/>
+            endOffset="2400"/>
     </incident>
 
     <incident
@@ -478,12 +497,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="67"
+            line="71"
             column="31"
-            startOffset="2200"
-            endLine="67"
+            startOffset="2431"
+            endLine="71"
             endColumn="73"
-            endOffset="2242"/>
+            endOffset="2473"/>
     </incident>
 
     <incident
@@ -497,12 +516,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="68"
+            line="72"
             column="25"
-            startOffset="2267"
-            endLine="68"
+            startOffset="2498"
+            endLine="72"
             endColumn="63"
-            endOffset="2305"/>
+            endOffset="2536"/>
     </incident>
 
 </incidents>

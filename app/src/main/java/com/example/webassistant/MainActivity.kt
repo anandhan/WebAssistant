@@ -21,6 +21,7 @@
 
 package com.example.webassistant
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.webkit.WebView
@@ -67,8 +68,14 @@ class MainActivity : ComponentActivity() {
             WebAssistantScreen(
                 networkService = networkService,
                 getWebContent = { currentWebContent },
-                onExtractContent = { extractWebContent() },
-                onPageChanged = { onPageChanged?.invoke() }
+                onPageChanged = { onPageChanged?.invoke() },
+                onLaunchProviderView = { url ->
+                    // Launch WebViewActivity with the current URL
+                    val intent = Intent(this, WebViewActivity::class.java).apply {
+                        putExtra("url", url)
+                    }
+                    startActivity(intent)
+                }
             )
         }
     }
@@ -95,8 +102,8 @@ class MainActivity : ComponentActivity() {
 fun WebAssistantScreen(
     networkService: NetworkService,
     getWebContent: () -> String,
-    onExtractContent: () -> Unit,
-    onPageChanged: (() -> Unit) -> Unit
+    onPageChanged: (() -> Unit) -> Unit,
+    onLaunchProviderView: (String) -> Unit
 ) {
     val TAG = "WebAssistant"
     var chatHistory by remember { mutableStateOf(listOf<Message>()) }
@@ -297,6 +304,14 @@ fun WebAssistantScreen(
                     Text("Send")
                 }
             }
+        }
+
+        // Add a button to launch the provider-specific view
+        Button(
+            onClick = { onLaunchProviderView(urlInput) },
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text("Open Provider View")
         }
     }
 }

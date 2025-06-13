@@ -39,6 +39,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.webassistant.WebViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WebAssistant" />
+        <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />
 
