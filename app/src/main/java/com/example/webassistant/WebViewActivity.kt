@@ -1,0 +1,229 @@
+package com.example.webassistant
+
+import android.os.Bundle
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import org.json.JSONObject
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.IOException
+
+class WebViewActivity : AppCompatActivity() {
+    private lateinit var webView: WebView
+    private lateinit var messageInput: EditText
+    private lateinit var sendButton: Button
+    private lateinit var chatContainer: LinearLayout
+    private lateinit var knowledgeBaseManager: KnowledgeBaseManager
+    private var currentProvider: String? = null
+    private val client = OkHttpClient()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_web_view)
+
+        // Initialize KnowledgeBaseManager
+        knowledgeBaseManager = KnowledgeBaseManager(this)
+
+        // Initialize views
+        webView = findViewById(R.id.webView)
+        messageInput = findViewById(R.id.messageInput)
+        sendButton = findViewById(R.id.sendButton)
+        chatContainer = findViewById(R.id.chatContainer)
+
+        // Configure WebView
+        webView.settings.javaScriptEnabled = true
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                detectProvider(url)
+            }
+        }
+
+        // Set up send button click listener
+        sendButton.setOnClickListener {
+            val message = messageInput.text.toString()
+            if (message.isNotEmpty()) {
+                processUserMessage(message)
+                messageInput.text.clear()
+            }
+        }
+    }
+
+    private fun detectProvider(url: String?) {
+        currentProvider = when {
+            url?.contains("att.com") == true -> "att"
+            url?.contains("verizon.com") == true -> "verizon"
+            url?.contains("t-mobile.com") == true -> "tmobile"
+            else -> null
+        }
+    }
+
+    private fun processUserMessage(message: String) {
+        // First, check the knowledge base for relevant information
+        val knowledgeBaseResults = currentProvider?.let { provider ->
+            when {
+                message.contains("step", ignoreCase = true) -> {
+                    knowledgeBaseManager.getPortingSteps(provider)
+                }
+                message.contains("issue", ignoreCase = true) || 
+                message.contains("problem", ignoreCase = true) -> {
+                    knowledgeBaseManager.getCommonIssues(provider)
+                }
+                message.contains("xfinity", ignoreCase = true) -> {
+                    knowledgeBaseManager.getXfinityPortInGuide(provider)
+                }
+                else -> {
+                    knowledgeBaseManager.searchKnowledgeBase(message)
+                }
+            }
+        }
+
+        // Prepare the context for the LLM
+        val context = StringBuilder()
+        
+        // Add knowledge base information if available
+        knowledgeBaseResults?.let { results ->
+            context.append("Relevant information from knowledge base:\n")
+            when (results) {
+                is List<*> -> {
+                    results.forEach { item ->
+                        if (item is Map<*, *>) {
+                            context.append(item.toString())
+                            context.append("\n")
+                        }
+                    }
+                }
+                is Map<*, *> -> {
+                    context.append(results.toString())
+                    context.append("\n")
+                }
+                else -> {
+                    context.append(results.toString())
+                    context.append("\n")
+                }
+            }
+        }
+
+        // Add current webpage content
+        webView.evaluateJavascript("""
+            (function() {
+                return {
+                    title: document.title,
+                    text: document.body.innerText,
+                    links: Array.from(document.getElementsByTagName('a')).map(a => a.href),
+                    headings: Array.from(document.getElementsByTagName('h1')).map(h => h.innerText),
+                    paragraphs: Array.from(document.getElementsByTagName('p')).map(p => p.innerText),
+                    lists: Array.from(document.querySelectorAll('ul, ol')).map(list => 
+                        Array.from(list.getElementsByTagName('li')).map(li => li.innerText)
+                    )
+                }
+            })()
+        """.trimIndent()) { result ->
+            try {
+                val jsonResult = JSONObject(result)
+                context.append("\nCurrent webpage content:\n")
+                context.append("Title: ${jsonResult.optString("title")}\n")
+                context.append("Text: ${jsonResult.optString("text")}\n")
+                
+                // Handle arrays properly
+                val links = jsonResult.optJSONArray("links")
+                val headings = jsonResult.optJSONArray("headings")
+                val paragraphs = jsonResult.optJSONArray("paragraphs")
+                val lists = jsonResult.optJSONArray("lists")
+
+                context.append("Links: ${links?.let { (0 until it.length()).map { i -> it.getString(i) }.joinToString() } ?: ""}\n")
+                context.append("Headings: ${headings?.let { (0 until it.length()).map { i -> it.getString(i) }.joinToString() } ?: ""}\n")
+                context.append("Paragraphs: ${paragraphs?.let { (0 until it.length()).map { i -> it.getString(i) }.joinToString() } ?: ""}\n")
+                context.append("Lists: ${lists?.let { (0 until it.length()).map { i -> it.getJSONArray(i).let { arr -> (0 until arr.length()).map { j -> arr.getString(j) }.joinToString() } }.joinToString() } ?: ""}\n")
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        // Add user's question
+        context.append("\nUser's question: $message\n")
+
+        // Create the prompt for the LLM
+        val prompt = """
+            You are a helpful assistant guiding users through the process of porting their phone number to Xfinity Mobile.
+            Use the following context to provide a clear and helpful response:
+            
+            $context
+            
+            Please provide a helpful response that:
+            1. Addresses the user's specific question
+            2. Uses relevant information from the knowledge base
+            3. References the current webpage content when relevant
+            4. Provides clear, step-by-step guidance when needed
+            5. Includes any important warnings or prerequisites
+        """.trimIndent()
+
+        // Call the LLM with the enhanced context
+        callOpenAI(prompt)
+    }
+
+    private fun callOpenAI(prompt: String) {
+        val apiKey = "your-api-key" // Replace with your actual API key
+        val json = """
+            {
+                "model": "gpt-4",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a helpful assistant for porting phone numbers to Xfinity Mobile."
+                    },
+                    {
+                        "role": "user",
+                        "content": "$prompt"
+                    }
+                ],
+                "temperature": 0.7
+            }
+        """.trimIndent()
+
+        val requestBody = json.toRequestBody("application/json".toMediaType())
+        val request = Request.Builder()
+            .url("https://api.openai.com/v1/chat/completions")
+            .addHeader("Authorization", "Bearer $apiKey")
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val responseBody = response.body?.string()
+                try {
+                    val jsonResponse = JSONObject(responseBody)
+                    val message = jsonResponse.getJSONArray("choices")
+                        .getJSONObject(0)
+                        .getJSONObject("message")
+                        .getString("content")
+                    
+                    runOnUiThread {
+                        // Add the response to the chat
+                        addMessageToChat("Assistant", message)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        })
+    }
+
+    private fun addMessageToChat(sender: String, message: String) {
+        val messageView = TextView(this).apply {
+            text = "$sender: $message"
+            setPadding(0, 8, 0, 8)
+        }
+        chatContainer.addView(messageView)
+    }
+} 
