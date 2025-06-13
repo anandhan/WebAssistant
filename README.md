@@ -1,119 +1,33 @@
-# Web Assistant Android App
+# WebAssistant
 
-A mobile application that helps users navigate websites using AI-powered assistance. The app features a WebView component that loads websites and an AI chat interface that helps users understand and navigate the content.
+## Overview
+WebAssistant is an Android application designed to provide users with an interactive web browsing experience combined with an AI assistant. The app allows users to navigate to a URL, view the webpage content, and interact with an AI assistant that can answer questions about the webpage content.
 
 ## Features
+- **WebView Integration:** Displays web content within the app.
+- **AI Assistant:** Provides context-aware responses to user questions based on the current webpage content and a knowledge base.
+- **Knowledge Base:** Contains provider-specific information (e.g., porting steps, common issues) and general porting information.
+- **Configuration Management:** Loads configuration properties from a 'config.properties' file, including the OpenAI API key and model settings.
 
-- WebView integration for loading websites (default: att.com)
-- AI-powered chat interface for navigation assistance
-- Manual content extraction to analyze webpage content
-- Configurable LLM model (GPT-4.1, GPT-4, GPT-3.5-turbo)
-- Modern Material Design UI with Jetpack Compose
-- Compatible with Android 8.0 (API 26) and above
+## Components
+- **MainActivity:** The main entry point of the app, setting up the UI using Jetpack Compose and managing the WebView.
+- **WebViewActivity:** Displays a WebView and manages a chat interface for interacting with the AI assistant.
+- **KnowledgeBaseManager:** Loads and manages a JSON-based knowledge base stored in the app's assets folder.
+- **ConfigManager:** Loads and manages configuration properties from a 'config.properties' file.
+- **NetworkService:** Handles network requests to external APIs, specifically the OpenAI API.
+- **AIService:** Defines the API endpoints for processing questions using the OpenAI API.
 
-## Prerequisites
+## Setup
+1. Clone the repository.
+2. Open the project in Android Studio.
+3. Ensure that the 'config.properties' file is present in the assets folder with the necessary configuration settings.
+4. Build and run the application on an Android device or emulator.
 
-- **Android Studio** (latest recommended)
-- **Android SDK** (API 26+)
-- **Java 17+**
-- **OpenAI API key** (for LLM integration)
-
-## Project Structure
-
-```
-WebAssistant/
-├── app/
-│   ├── build.gradle
-│   └── src/
-│       └── main/
-│           ├── AndroidManifest.xml
-│           ├── assets/
-│           │   └── config.properties    # Configuration file
-│           ├── java/com/example/webassistant/
-│           │   ├── MainActivity.kt
-│           │   ├── AIService.kt
-│           │   ├── NetworkService.kt
-│           │   └── ConfigManager.kt
-│           └── res/
-│               ├── drawable/
-│               ├── mipmap-xxxhdpi/
-│               └── values/
-├── build.gradle
-├── gradle.properties
-├── gradlew, gradlew.bat
-├── gradle/
-├── local.properties
-└── settings.gradle
-```
-
-## Setup & Build
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/anandhan/WebAssistant.git
-   cd WebAssistant
-   ```
-
-2. **Configure API Key and Model:**
-   - Open `app/src/main/assets/config.properties`
-   - Set your OpenAI API key:
-     ```
-     OPENAI_API_KEY=your-api-key-here
-     ```
-   - Choose your preferred LLM model:
-     ```
-     OPENAI_MODEL=gpt-4.1  # Options: gpt-4.1, gpt-4, gpt-3.5-turbo
-     ```
-
-3. **Configure Android SDK:**
-   - Ensure your `local.properties` file contains the correct SDK path:
-     ```
-     sdk.dir=/Users/<your-username>/Library/Android/sdk
-     ```
-
-4. **Open in Android Studio:**
-   - Open the project folder in Android Studio.
-   - Let it sync and download dependencies.
-
-5. **Build from command line:**
-   ```sh
-   ./gradlew build
-   ```
-
-6. **Run the app:**
-   - Use Android Studio or:
-     ```sh
-     ./gradlew installDebug
-     ```
-
-## Usage
-
-1. **Load a Webpage:**
-   - The app opens with att.com by default
-   - You can modify the URL in `MainActivity.kt`
-
-2. **Analyze Content:**
-   - Tap "Extract Page Content" to analyze the current webpage
-   - Wait for content extraction to complete
-
-3. **Ask Questions:**
-   - Type your question about the webpage content
-   - Press "Send" to get an AI-powered response
-   - The LLM will analyze the webpage content and provide relevant answers
-
-## Customization
-
-- Change the default URL in `MainActivity.kt` (`url` variable)
-- Modify the LLM model in `config.properties`
-- Update icons in `app/src/main/res/mipmap-xxxhdpi/` as needed
-
-## Troubleshooting
-
-- Ensure your SDK and Java versions match the requirements
-- If you see version errors, check `build.gradle` and `app/build.gradle` for Kotlin and Compose versions
-- For missing icons or resources, rebuild the project after cleaning: `./gradlew clean build`
-- If you get HTTP 429 errors, check your OpenAI API rate limits and quota
+## Dependencies
+- Jetpack Compose for UI
+- OkHttp for network requests
+- Retrofit for API service definition
+- OpenAI API for AI responses
 
 ## License
-
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License - see the LICENSE file for details. 
