@@ -5,8 +5,8 @@ INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/9477d38130045a5d5945c7519d28b630/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/3370353d0662e659b108a5a2229fc850/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/eef6369c3c6086426b2c6c6c50288813/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.webkit:webkit:1.8.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/338c7f569a2bc9bdc7d524f1486b81ad/transformed/webkit-1.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/6a14379a836eadf9c307959daa1842f3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -92,8 +92,8 @@ ADDED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/And
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml:7:5-25:19
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/3370353d0662e659b108a5a2229fc850/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/3370353d0662e659b108a5a2229fc850/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/fc77ba9926f6c17c64dccc03c594eb25/transformed/jetified-emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/fc77ba9926f6c17c64dccc03c594eb25/transformed/jetified-emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.12.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/92d59f9dbc51ca032dad1d074dc05b0a/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
@@ -148,10 +148,10 @@ INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/
 INJECTED from /Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.11.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/14761072bde0a5ee3510953623dd32d9/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/anandhansubbiah/.gradle/caches/transforms-4/be14c9564fd0a82f89dd47d9f1155360/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/9477d38130045a5d5945c7519d28b630/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/9477d38130045a5d5945c7519d28b630/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/3370353d0662e659b108a5a2229fc850/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/3370353d0662e659b108a5a2229fc850/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/eef6369c3c6086426b2c6c6c50288813/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/anandhansubbiah/.gradle/caches/transforms-4/eef6369c3c6086426b2c6c6c50288813/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.webkit:webkit:1.8.0] /Users/anandhansubbiah/.gradle/caches/transforms-4/338c7f569a2bc9bdc7d524f1486b81ad/transformed/webkit-1.8.0/AndroidManifest.xml:5:5-44

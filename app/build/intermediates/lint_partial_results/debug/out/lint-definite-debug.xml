@@ -2,6 +2,99 @@
 <incidents format="6" by="lint 8.1.0" type="incidents">
 
     <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                dot="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_web_view.xml"
+            line="26"
+            column="10"
+            startOffset="804"
+            endLine="26"
+            endColumn="18"
+            endOffset="812"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Type your message...&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_web_view.xml"
+            line="31"
+            column="13"
+            startOffset="994"
+            endLine="31"
+            endColumn="48"
+            endOffset="1029"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Send&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_web_view.xml"
+            line="40"
+            column="13"
+            startOffset="1324"
+            endLine="40"
+            endColumn="32"
+            endOffset="1343"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v26`) is unnecessary; `minSdkVersion` is 26. Merge all the resources in this folder into `mipmap-anydpi`.">
+        <fix-data file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26" folderName="mipmap-anydpi" requiresApi="26"/>
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="270"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="270"/>
+    </incident>
+
+    <incident
         id="MonochromeLauncherIcon"
         severity="warning"
         message="The application adaptive icon is missing a monochrome tag">
@@ -35,12 +128,40 @@
         message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/MainActivity.kt"
-            line="137"
+            line="155"
             column="25"
-            startOffset="4438"
-            endLine="137"
+            startOffset="5564"
+            endLine="155"
             endColumn="49"
-            endOffset="4462"/>
+            endOffset="5588"/>
+    </incident>
+
+    <incident
+        id="SetJavaScriptEnabled"
+        severity="warning"
+        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/WebViewActivity.kt"
+            line="40"
+            column="9"
+            startOffset="1387"
+            endLine="40"
+            endColumn="50"
+            endOffset="1428"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/example/webassistant/WebViewActivity.kt"
+            line="224"
+            column="20"
+            startOffset="9084"
+            endLine="224"
+            endColumn="39"
+            endOffset="9103"/>
     </incident>
 
     <incident
@@ -55,10 +176,10 @@
             file="${:app*projectDir}/build.gradle"
             line="13"
             column="9"
-            startOffset="235"
+            startOffset="249"
             endLine="13"
             endColumn="21"
-            endOffset="247"/>
+            endOffset="261"/>
     </incident>
 
     <incident
@@ -74,10 +195,10 @@
             file="${:app*projectDir}/build.gradle"
             line="46"
             column="20"
-            startOffset="928"
+            startOffset="942"
             endLine="46"
             endColumn="51"
-            endOffset="959"/>
+            endOffset="973"/>
     </incident>
 
     <incident
@@ -93,10 +214,10 @@
             file="${:app*projectDir}/build.gradle"
             line="47"
             column="20"
-            startOffset="979"
+            startOffset="993"
             endLine="47"
             endColumn="56"
-            endOffset="1015"/>
+            endOffset="1029"/>
     </incident>
 
     <incident
@@ -112,10 +233,29 @@
             file="${:app*projectDir}/build.gradle"
             line="48"
             column="20"
-            startOffset="1035"
+            startOffset="1049"
             endLine="48"
             endColumn="65"
-            endOffset="1080"/>
+            endOffset="1094"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="49"
+            column="20"
+            startOffset="1114"
+            endLine="49"
+            endColumn="70"
+            endOffset="1164"/>
     </incident>
 
     <incident
@@ -129,12 +269,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="49"
+            line="51"
             column="20"
-            startOffset="1100"
-            endLine="49"
+            startOffset="1240"
+            endLine="51"
             endColumn="50"
-            endOffset="1130"/>
+            endOffset="1270"/>
     </incident>
 
     <incident
@@ -148,12 +288,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="50"
+            line="52"
             column="20"
-            startOffset="1150"
-            endLine="50"
+            startOffset="1290"
+            endLine="52"
             endColumn="62"
-            endOffset="1192"/>
+            endOffset="1332"/>
     </incident>
 
     <incident
@@ -167,12 +307,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="51"
+            line="53"
             column="20"
-            startOffset="1212"
-            endLine="51"
+            startOffset="1352"
+            endLine="53"
             endColumn="66"
-            endOffset="1258"/>
+            endOffset="1398"/>
     </incident>
 
     <incident
@@ -186,12 +326,12 @@
             replacement="2.9.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="52"
+            line="54"
             column="20"
-            startOffset="1278"
-            endLine="52"
+            startOffset="1418"
+            endLine="54"
             endColumn="68"
-            endOffset="1326"/>
+            endOffset="1466"/>
     </incident>
 
     <incident
@@ -205,12 +345,12 @@
             replacement="1.10.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="53"
+            line="55"
             column="20"
-            startOffset="1346"
-            endLine="53"
+            startOffset="1486"
+            endLine="55"
             endColumn="62"
-            endOffset="1388"/>
+            endOffset="1528"/>
     </incident>
 
     <incident
@@ -224,12 +364,12 @@
             replacement="1.7.3"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="58"
+            line="59"
             column="20"
-            startOffset="1655"
-            endLine="58"
+            startOffset="1740"
+            endLine="59"
             endColumn="76"
-            endOffset="1711"/>
+            endOffset="1796"/>
     </incident>
 
     <incident
@@ -243,12 +383,12 @@
             replacement="1.7.3"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="59"
+            line="60"
             column="20"
-            startOffset="1731"
-            endLine="59"
+            startOffset="1816"
+            endLine="60"
             endColumn="73"
-            endOffset="1784"/>
+            endOffset="1869"/>
     </incident>
 
     <incident
@@ -262,12 +402,12 @@
             replacement="1.14.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="60"
+            line="61"
             column="20"
-            startOffset="1804"
-            endLine="60"
+            startOffset="1889"
+            endLine="61"
             endColumn="50"
-            endOffset="1834"/>
+            endOffset="1919"/>
     </incident>
 
     <incident
@@ -281,12 +421,12 @@
             replacement="1.3.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="61"
+            line="62"
             column="20"
-            startOffset="1854"
-            endLine="61"
+            startOffset="1939"
+            endLine="62"
             endColumn="64"
-            endOffset="1898"/>
+            endOffset="1983"/>
     </incident>
 
     <incident
@@ -300,12 +440,12 @@
             replacement="1.2.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="64"
+            line="65"
             column="31"
-            startOffset="1978"
-            endLine="64"
+            startOffset="2063"
+            endLine="65"
             endColumn="62"
-            endOffset="2009"/>
+            endOffset="2094"/>
     </incident>
 
     <incident
@@ -319,12 +459,12 @@
             replacement="3.6.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="65"
+            line="66"
             column="31"
-            startOffset="2040"
-            endLine="65"
+            startOffset="2125"
+            endLine="66"
             endColumn="75"
-            endOffset="2084"/>
+            endOffset="2169"/>
     </incident>
 
     <incident
@@ -338,12 +478,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="66"
+            line="67"
             column="31"
-            startOffset="2115"
-            endLine="66"
+            startOffset="2200"
+            endLine="67"
             endColumn="73"
-            endOffset="2157"/>
+            endOffset="2242"/>
     </incident>
 
     <incident
@@ -357,12 +497,12 @@
             replacement="1.8.2"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="67"
+            line="68"
             column="25"
-            startOffset="2182"
-            endLine="67"
+            startOffset="2267"
+            endLine="68"
             endColumn="63"
-            endOffset="2220"/>
+            endOffset="2305"/>
     </incident>
 
 </incidents>

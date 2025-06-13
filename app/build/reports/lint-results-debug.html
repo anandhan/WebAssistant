@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 21 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 30 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Jun 10 15:41:40 EDT 2025 by AGP (8.1.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Jun 13 17:50:21 EDT 2025 by AGP (8.1.0)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,10 +187,14 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (16)</a>
-      <a class="mdl-navigation__link" href="#SetJavaScriptEnabled"><i class="material-icons warning-icon">warning</i>Using <code>setJavaScriptEnabled</code> (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (17)</a>
+      <a class="mdl-navigation__link" href="#SetJavaScriptEnabled"><i class="material-icons warning-icon">warning</i>Using <code>setJavaScriptEnabled</code> (2)</a>
+      <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (1)</a>
-      <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (2)</a>
+      <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (4)</a>
+      <a class="mdl-navigation__link" href="#Autofill"><i class="material-icons warning-icon">warning</i>Use Autofill (1)</a>
+      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (1)</a>
+      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (2)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -209,23 +213,39 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">16</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">17</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SetJavaScriptEnabled">SetJavaScriptEnabled</a>: Using <code>setJavaScriptEnabled</code></td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#MonochromeLauncherIcon">MonochromeLauncherIcon</a>: Monochrome icon is not defined</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability">Usability</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#Autofill">Autofill</a>: Use Autofill</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#HardcodedText">HardcodedText</a>: Hardcoded text</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (59)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (42)</a>
@@ -304,7 +324,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 46 </span>    implementation <span class="warning"><span class="string">'androidx.core:core-ktx:1.12.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 47 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.6.1'</span>
 <span class="lineno"> 48 </span>    implementation <span class="string">'com.google.android.material:material:1.11.0'</span>
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span></pre>
+<span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span></pre>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:47</span>: <span class="message">A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1</span><br /><pre class="errorlines">
 <span class="lineno"> 44 </span>
@@ -312,134 +332,143 @@ Dismiss</button>            </div>
 <span class="lineno"> 46 </span>    implementation <span class="string">'androidx.core:core-ktx:1.12.0'</span>
 <span class="caretline"><span class="lineno"> 47 </span>    implementation <span class="warning"><span class="string">'androidx.appcompat:appcompat:1.6.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 48 </span>    implementation <span class="string">'com.google.android.material:material:1.11.0'</span>
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span></pre>
+<span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span></pre>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:48</span>: <span class="message">A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0</span><br /><pre class="errorlines">
 <span class="lineno"> 45 </span>dependencies {
 <span class="lineno"> 46 </span>    implementation <span class="string">'androidx.core:core-ktx:1.12.0'</span>
 <span class="lineno"> 47 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.6.1'</span>
 <span class="caretline"><span class="lineno"> 48 </span>    implementation <span class="warning"><span class="string">'com.google.android.material:material:1.11.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
-<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span></pre>
+<span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span>
+<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:49</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:49</span>: <span class="message">A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1</span><br /><pre class="errorlines">
 <span class="lineno"> 46 </span>    implementation <span class="string">'androidx.core:core-ktx:1.12.0'</span>
 <span class="lineno"> 47 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.6.1'</span>
 <span class="lineno"> 48 </span>    implementation <span class="string">'com.google.android.material:material:1.11.0'</span>
-<span class="caretline"><span class="lineno"> 49 </span>    implementation <span class="warning"><span class="string">"androidx.compose.ui:ui:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
-<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
-<span class="lineno"> 52 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span></pre>
+<span class="caretline"><span class="lineno"> 49 </span>    implementation <span class="warning"><span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span>
+<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
+<span class="lineno"> 52 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:50</span>: <span class="message">A newer version of androidx.compose.material:material than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 47 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.6.1'</span>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:51</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
 <span class="lineno"> 48 </span>    implementation <span class="string">'com.google.android.material:material:1.11.0'</span>
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
-<span class="caretline"><span class="lineno"> 50 </span>    implementation <span class="warning"><span class="string">"androidx.compose.material:material:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
-<span class="lineno"> 52 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
-<span class="lineno"> 53 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span></pre>
+<span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span>
+<span class="caretline"><span class="lineno"> 51 </span>    implementation <span class="warning"><span class="string">"androidx.compose.ui:ui:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 52 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
+<span class="lineno"> 53 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
+<span class="lineno"> 54 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 11 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 12 More Occurrences...</button>
 <div id="GradleDependencyDiv" style="display: none">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:51</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 48 </span>    implementation <span class="string">'com.google.android.material:material:1.11.0'</span>
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
-<span class="caretline"><span class="lineno"> 51 </span>    implementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 52 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
-<span class="lineno"> 53 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span>
-<span class="lineno"> 54 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">A newer version of androidx.compose.material:material than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span>
+<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
+<span class="caretline"><span class="lineno"> 52 </span>    implementation <span class="warning"><span class="string">"androidx.compose.material:material:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 53 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
+<span class="lineno"> 54 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
+<span class="lineno"> 55 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.1</span><br /><pre class="errorlines">
-<span class="lineno"> 49 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
-<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
-<span class="caretline"><span class="lineno"> 52 </span>    implementation <span class="warning"><span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 53 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span>
-<span class="lineno"> 54 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span>
-<span class="lineno"> 55 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:53</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 50 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.12.0'</span>
+<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
+<span class="lineno"> 52 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
+<span class="caretline"><span class="lineno"> 53 </span>    implementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 54 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
+<span class="lineno"> 55 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span>
+<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:53</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1</span><br /><pre class="errorlines">
-<span class="lineno"> 50 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
-<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
-<span class="lineno"> 52 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
-<span class="caretline"><span class="lineno"> 53 </span>    implementation <span class="warning"><span class="string">'androidx.activity:activity-compose:1.8.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 54 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span>
-<span class="lineno"> 55 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
-<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.9.3'</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:54</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.1</span><br /><pre class="errorlines">
+<span class="lineno"> 51 </span>    implementation <span class="string">"androidx.compose.ui:ui:1.5.4"</span>
+<span class="lineno"> 52 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
+<span class="lineno"> 53 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
+<span class="caretline"><span class="lineno"> 54 </span>    implementation <span class="warning"><span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 55 </span>    implementation <span class="string">'androidx.activity:activity-compose:1.8.2'</span>
+<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span>
+<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:58</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
-<span class="lineno"> 55 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
-<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.9.3'</span>
-<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
-<span class="caretline"><span class="lineno"> 58 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
-<span class="lineno"> 61 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:55</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1</span><br /><pre class="errorlines">
+<span class="lineno"> 52 </span>    implementation <span class="string">"androidx.compose.material:material:1.5.4"</span>
+<span class="lineno"> 53 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
+<span class="lineno"> 54 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
+<span class="caretline"><span class="lineno"> 55 </span>    implementation <span class="warning"><span class="string">'androidx.activity:activity-compose:1.8.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span>
+<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
+<span class="lineno"> 58 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:59</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
-<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.okhttp3:okhttp:4.9.3'</span>
-<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
-<span class="lineno"> 58 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
-<span class="caretline"><span class="lineno"> 59 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
-<span class="lineno"> 61 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
-<span class="lineno"> 62 </span>    
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:59</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
+<span class="lineno"> 56 </span>    implementation <span class="string">'com.squareup.retrofit2:retrofit:2.9.0'</span>
+<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
+<span class="lineno"> 58 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
+<span class="caretline"><span class="lineno"> 59 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 60 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
+<span class="lineno"> 61 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
+<span class="lineno"> 62 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span></pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:60</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
+<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
+<span class="lineno"> 58 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
+<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
+<span class="caretline"><span class="lineno"> 60 </span>    implementation <span class="warning"><span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 61 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
+<span class="lineno"> 62 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
+<span class="lineno"> 63 </span>    
 </pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:60</span>: <span class="message">A newer version of androidx.webkit:webkit than 1.8.0 is available: 1.14.0</span><br /><pre class="errorlines">
-<span class="lineno"> 57 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
-<span class="lineno"> 58 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
-<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
-<span class="caretline"><span class="lineno"> 60 </span>    implementation <span class="warning"><span class="string">'androidx.webkit:webkit:1.8.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 61 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
-<span class="lineno"> 62 </span>    
-<span class="lineno"> 63 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:61</span>: <span class="message">A newer version of androidx.webkit:webkit than 1.8.0 is available: 1.14.0</span><br /><pre class="errorlines">
+<span class="lineno"> 58 </span>    implementation <span class="string">'com.squareup.okhttp3:logging-interceptor:4.9.3'</span>
+<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
+<span class="lineno"> 60 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
+<span class="caretline"><span class="lineno"> 61 </span>    implementation <span class="warning"><span class="string">'androidx.webkit:webkit:1.8.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 62 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
+<span class="lineno"> 63 </span>    
+<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:61</span>: <span class="message">A newer version of androidx.compose.material3:material3 than 1.1.2 is available: 1.3.2</span><br /><pre class="errorlines">
-<span class="lineno"> 58 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
-<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
-<span class="caretline"><span class="lineno"> 61 </span>    implementation <span class="warning"><span class="string">"androidx.compose.material3:material3:1.1.2"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 62 </span>    
-<span class="lineno"> 63 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 64 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:62</span>: <span class="message">A newer version of androidx.compose.material3:material3 than 1.1.2 is available: 1.3.2</span><br /><pre class="errorlines">
+<span class="lineno"> 59 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'</span>
+<span class="lineno"> 60 </span>    implementation <span class="string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'</span>
+<span class="lineno"> 61 </span>    implementation <span class="string">'androidx.webkit:webkit:1.8.0'</span>
+<span class="caretline"><span class="lineno"> 62 </span>    implementation <span class="warning"><span class="string">"androidx.compose.material3:material3:1.1.2"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 63 </span>    
+<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
+<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:64</span>: <span class="message">A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1</span><br /><pre class="errorlines">
-<span class="lineno"> 61 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
-<span class="lineno"> 62 </span>    
-<span class="lineno"> 63 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="caretline"><span class="lineno"> 64 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.1.5'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="lineno"> 67 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:65</span>: <span class="message">A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1</span><br /><pre class="errorlines">
+<span class="lineno"> 62 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
+<span class="lineno"> 63 </span>    
+<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
+<span class="caretline"><span class="lineno"> 65 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.1.5'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:65</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1</span><br /><pre class="errorlines">
-<span class="lineno"> 62 </span>    
-<span class="lineno"> 63 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 64 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="caretline"><span class="lineno"> 65 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="lineno"> 67 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
-<span class="lineno"> 68 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:66</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1</span><br /><pre class="errorlines">
+<span class="lineno"> 63 </span>    
+<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
+<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="caretline"><span class="lineno"> 66 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
+<span class="lineno"> 69 </span>} </pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:66</span>: <span class="message">A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 63 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 64 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="caretline"><span class="lineno"> 66 </span>    androidTestImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 67 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
-<span class="lineno"> 68 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:67</span>: <span class="message">A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
+<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="caretline"><span class="lineno"> 67 </span>    androidTestImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
+<span class="lineno"> 69 </span>} </pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:67</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 64 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="caretline"><span class="lineno"> 67 </span>    debugImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 68 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:68</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="caretline"><span class="lineno"> 68 </span>    debugImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 69 </span>} </pre>
 
 </div>
 </div>
@@ -480,14 +509,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:137</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
-<span class="lineno"> 134 </span>            factory = { context ->
-<span class="lineno"> 135 </span>                WebView(context).apply {
-<span class="lineno"> 136 </span>                    settings.apply {
-<span class="caretline"><span class="lineno"> 137 </span>                        <span class="warning">javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 138 </span>                        domStorageEnabled = <span class="keyword">true</span>
-<span class="lineno"> 139 </span>                        setSupportZoom(<span class="keyword">true</span>)
-<span class="lineno"> 140 </span>                        builtInZoomControls = <span class="keyword">true</span></pre>
+<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:155</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
+<span class="lineno"> 152 </span>            factory = { context ->
+<span class="lineno"> 153 </span>                WebView(context).apply {
+<span class="lineno"> 154 </span>                    settings.apply {
+<span class="caretline"><span class="lineno"> 155 </span>                        <span class="warning">javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 156 </span>                        domStorageEnabled = <span class="keyword">true</span>
+<span class="lineno"> 157 </span>                        setSupportZoom(<span class="keyword">true</span>)
+<span class="lineno"> 158 </span>                        builtInZoomControls = <span class="keyword">true</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:40</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
+<span class="lineno">  37 </span>        chatContainer = findViewById(R.id.chatContainer)
+<span class="lineno">  38 </span>
+<span class="lineno">  39 </span>        <span class="comment">// Configure WebView</span>
+<span class="caretline"><span class="lineno">  40 </span>        <span class="warning">webView.settings.javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  41 </span>        webView.webViewClient = <span class="keyword">object</span> : WebViewClient() {
+<span class="lineno">  42 </span>            override <span class="keyword">fun</span> onPageFinished(view: WebView?, url: String?) {
+<span class="lineno">  43 </span>                <span class="keyword">super</span>.onPageFinished(view, url)
+</pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationSetJavaScriptEnabled" style="display: none;">
@@ -519,7 +558,46 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Performance"></a>
-<a name="UnusedResources"></a>
+<a name="ObsoleteSdkInt"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ObsoleteSdkIntCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete SDK_INT Version Check</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/mipmap-anydpi-v26">../../src/main/res/mipmap-anydpi-v26</a></span>: <span class="message">This folder configuration (<code>v26</code>) is unnecessary; <code>minSdkVersion</code> is 26. Merge all the resources in this folder into <code>mipmap-anydpi</code>.</span><br />
+</div>
+<div class="metadata"><div class="explanation" id="explanationObsoleteSdkInt" style="display: none;">
+This check flags version checks that are not necessary, because the <code>minSdkVersion</code> (or surrounding known API level) is already at least as high as the version checked for.<br/>
+<br/>
+Similarly, it also looks for resources in <code>-vNN</code> folders, such as <code>values-v14</code> where the version qualifier is less than or equal to the <code>minSdkVersion</code>, where the contents should be merged into the best folder.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ObsoleteSdkInt" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ObsoleteSdkInt</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationObsoleteSdkIntLink" onclick="reveal('explanationObsoleteSdkInt');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ObsoleteSdkIntCardLink" onclick="hideid('ObsoleteSdkIntCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="UnusedResources"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -580,10 +658,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/mipmap-anydpi-v26/ic_launcher.xml">../../src/main/res/mipmap-anydpi-v26/ic_launcher.xml</a>:2</span>: <span class="message">The application adaptive icon is missing a monochrome tag</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_background"</span>/>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span>/>
+<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span> </pre>
+
 <span class="location"><a href="../../src/main/res/mipmap-xxxhdpi/ic_launcher.xml">../../src/main/res/mipmap-xxxhdpi/ic_launcher.xml</a>:2</span>: <span class="message">The application adaptive icon is missing a monochrome tag</span><br /><pre class="errorlines">
 <span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@color/ic_launcher_background"</span>/>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span>/>
+<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span> </pre>
+
+<span class="location"><a href="../../src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">../../src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml</a>:2</span>: <span class="message">The application adaptive roundIcon is missing a monochrome tag</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_background"</span>/>
 <span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span>/>
 <span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span> </pre>
 
@@ -623,6 +715,168 @@ For example, if <code>android:roundIcon</code> and <code>android:icon</code> are
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMonochromeLauncherIconLink" onclick="reveal('explanationMonochromeLauncherIcon');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MonochromeLauncherIconCardLink" onclick="hideid('MonochromeLauncherIconCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Usability"></a>
+<a name="Autofill"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AutofillCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Use Autofill</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_web_view.xml">../../src/main/res/layout/activity_web_view.xml</a>:26</span>: <span class="message">Missing <code>autofillHints</code> attribute</span><br /><pre class="errorlines">
+<span class="lineno"> 23 </span>        <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"horizontal"</span>
+<span class="lineno"> 24 </span>        <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"8dp"</span>>
+<span class="lineno"> 25 </span>
+<span class="caretline"><span class="lineno"> 26 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 27 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/messageInput"</span>
+<span class="lineno"> 28 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 29 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationAutofill" style="display: none;">
+Specify an <code>autofillHints</code> attribute when targeting SDK version 26 or higher or explicitly specify that the view is not important for autofill. Your app can help an autofill service classify the data correctly by providing the meaning of each view that could be autofillable, such as views representing usernames, passwords, credit card fields, email addresses, etc.<br/>
+<br/>
+The hints can have any value, but it is recommended to use predefined values like 'username' for a username or 'creditCardNumber' for a credit card number. For a list of all predefined autofill hint constants, see the <code>AUTOFILL_HINT_</code> constants in the <code>View</code> reference at <a href="https://developer.android.com/reference/android/view/View.html">https://developer.android.com/reference/android/view/View.html</a>.<br/>
+<br/>
+You can mark a view unimportant for autofill by specifying an <code>importantForAutofill</code> attribute on that view or a parent view. See <a href="https://developer.android.com/reference/android/view/View.html#setImportantForAutofill(int)">https://developer.android.com/reference/android/view/View.html#setImportantForAutofill(int)</a>.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/text/autofill.html">https://developer.android.com/guide/topics/text/autofill.html</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "Autofill" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Autofill</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAutofillLink" onclick="reveal('explanationAutofill');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AutofillCardLink" onclick="hideid('AutofillCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Internationalization"></a>
+<a name="SetTextI18n"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SetTextI18nCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">TextView Internationalization</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:224</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 221 </span>
+<span class="lineno"> 222 </span>    private <span class="keyword">fun</span> addMessageToChat(sender: String, message: String) {
+<span class="lineno"> 223 </span>        <span class="keyword">val</span> messageView = TextView(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno"> 224 </span>            text = <span class="warning"><span class="string">"$sender: $message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 225 </span>            setPadding(<span class="number">0</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">8</span>)
+<span class="lineno"> 226 </span>        }
+<span class="lineno"> 227 </span>        chatContainer.addView(messageView)
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationSetTextI18n" style="display: none;">
+When calling <code>TextView#setText</code><br/>
+* Never call <code>Number#toString()</code> to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using <code>String#format</code> with proper format specifications (<code>%d</code> or <code>%f</code>) instead.<br/>
+* Do not pass a string literal (e.g. "Hello") to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.<br/>
+* Do not build messages by concatenating text chunks. Such messages can not be properly translated.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/resources/localization.html">https://developer.android.com/guide/topics/resources/localization.html</a>
+</div>To suppress this error, use the issue id "SetTextI18n" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">SetTextI18n</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Internationalization</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSetTextI18nLink" onclick="reveal('explanationSetTextI18n');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SetTextI18nCardLink" onclick="hideid('SetTextI18nCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="HardcodedText"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="HardcodedTextCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Hardcoded text</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_web_view.xml">../../src/main/res/layout/activity_web_view.xml</a>:31</span>: <span class="message">Hardcoded string "Type your message...", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 28 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 29 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 30 </span>            <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"1"</span>
+<span class="caretline"><span class="lineno"> 31 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">hint</span>=<span class="value">"Type your message..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 32 </span>            <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"textMultiLine"</span>
+<span class="lineno"> 33 </span>            <span class="prefix">android:</span><span class="attribute">maxLines</span>=<span class="value">"4"</span> />
+</pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_web_view.xml">../../src/main/res/layout/activity_web_view.xml</a>:40</span>: <span class="message">Hardcoded string "Send", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 38 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 39 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
+<span class="caretline"><span class="lineno"> 40 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Send"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;/LinearLayout></span>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationHardcodedText" style="display: none;">
+Hardcoding text attributes directly in layout files is bad for several reasons:<br/>
+<br/>
+* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)<br/>
+<br/>
+* The application cannot be translated to other languages by just adding new translations for existing string resources.<br/>
+<br/>
+There are quickfixes to automatically extract this hardcoded string into a resource lookup.<br/>To suppress this error, use the issue id "HardcodedText" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">HardcodedText</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Internationalization</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationHardcodedTextLink" onclick="reveal('explanationHardcodedText');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="HardcodedTextCardLink" onclick="hideid('HardcodedTextCard');">
 Dismiss</button>            </div>
             </div>
           </section>

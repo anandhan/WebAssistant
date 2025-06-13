@@ -31,10 +31,10 @@ library {
   maven_library {
     groupId: "org.jetbrains.kotlin"
     artifactId: "kotlin-stdlib-jdk8"
-    version: "1.8.22"
+    version: "1.9.10"
   }
   digests {
-    sha256: "A\230\260\352\360\220\244\362[o~ZYX\037C\024\272\214\237l\321\321>\351\323H\346^\330\367\a"
+    sha256: "\244\307M\224\326L\341\253\3457`\376\003\211\335\224\037o\305X\320\332\263^G\300\205\241\036\310\017("
   }
   repo_index {
     value: 1
@@ -44,10 +44,10 @@ library {
   maven_library {
     groupId: "org.jetbrains.kotlin"
     artifactId: "kotlin-stdlib-jdk7"
-    version: "1.8.22"
+    version: "1.9.10"
   }
   digests {
-    sha256: "\005_\\\262B\207\372\020a\000\231Z{G\253\222\022k\201\3502\350u\365\372,\360\275Ui=\v"
+    sha256: "\254ca\277\232\321\3558,!\003\331q,G\315\354\026b2\264\220>\325\226\350\207k\006\201\311\267"
   }
   repo_index {
     value: 1
@@ -995,10 +995,10 @@ library {
   maven_library {
     groupId: "androidx.constraintlayout"
     artifactId: "constraintlayout"
-    version: "2.0.1"
+    version: "2.1.4"
   }
   digests {
-    sha256: "\354\025\265\324\242\357\360x\210\274\024\231\316.,n\376$\300\355`\314W\260\214\235\304\266\375<!\211"
+    sha256: "\r\367\024\300\265\036Tq\016\277tn\264i\3233\027k\273<\262\237\200w]\303\312N\263\026%\022"
   }
   repo_index {
   }
@@ -1006,11 +1006,11 @@ library {
 library {
   maven_library {
     groupId: "androidx.constraintlayout"
-    artifactId: "constraintlayout-solver"
-    version: "2.0.1"
+    artifactId: "constraintlayout-core"
+    version: "1.0.4"
   }
   digests {
-    sha256: "\26272\355\2735\021\3317\376\241\377\357\004{\016l\000\033P\301\222\037\r\225\237\303\204\327\006\354j"
+    sha256: ">G\177M\3421\345\213%\365\251\222\363\276E\351}3,4\243\232\236>}Kx\256\n\302%o"
   }
   repo_index {
   }
@@ -1113,6 +1113,42 @@ library {
 }
 library {
   maven_library {
+    groupId: "com.squareup.okhttp3"
+    artifactId: "okhttp"
+    version: "4.12.0"
+  }
+  digests {
+    sha256: "\261\005\000\201\261K\267\243\247\345ZM>\360\033]\317\253\304S\264W:O\300\031vq\221\325\364\340"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "com.squareup.okio"
+    artifactId: "okio"
+    version: "3.6.0"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
+    groupId: "com.squareup.okio"
+    artifactId: "okio-jvm"
+    version: "3.6.0"
+  }
+  digests {
+    sha256: "gT?\a6\374B*\351\'\355\016PK\230\274^&\237\332\r5\000W\2237\313q=\242\204\022"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
     groupId: "androidx.compose.material"
     artifactId: "material"
     version: "1.5.4"
@@ -1182,32 +1218,6 @@ library {
   }
   digests {
     sha256: "\346\352\031)\304hR\365\276\306j\2635}\243\203Gl\357N\215\035\356\375\277\031[y\314Me\201"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
-    groupId: "com.squareup.okhttp3"
-    artifactId: "okhttp"
-    version: "4.9.3"
-  }
-  digests {
-    sha256: "\223\354\326\313\241\235\207\334\317\345f\354\204\215\221\252\347\231\343\317\026\300\a\t5\216\246\233\331\"r\031"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
-    groupId: "com.squareup.okio"
-    artifactId: "okio"
-    version: "2.8.0"
-  }
-  digests {
-    sha256: "D\226\260ns\230/\315\330\2459?F\345\337,\342\372De\337X\225EL\254h\243/\t\273\310"
   }
   repo_index {
     value: 1
@@ -2074,16 +2084,30 @@ library_dependencies {
 library_dependencies {
   library_index: 96
   library_dep_index: 97
+  library_dep_index: 2
 }
 library_dependencies {
   library_index: 97
+  library_dep_index: 98
+}
+library_dependencies {
+  library_index: 98
+  library_dep_index: 2
+  library_dep_index: 4
+}
+library_dependencies {
+  library_index: 99
+  library_dep_index: 100
+}
+library_dependencies {
+  library_index: 100
   library_dep_index: 6
   library_dep_index: 65
   library_dep_index: 67
   library_dep_index: 63
   library_dep_index: 69
-  library_dep_index: 98
-  library_dep_index: 100
+  library_dep_index: 101
+  library_dep_index: 103
   library_dep_index: 41
   library_dep_index: 45
   library_dep_index: 56
@@ -2092,72 +2116,62 @@ library_dependencies {
   library_dep_index: 27
   library_dep_index: 29
   library_dep_index: 4
-  library_dep_index: 98
-  library_dep_index: 100
-}
-library_dependencies {
-  library_index: 98
-  library_dep_index: 99
-}
-library_dependencies {
-  library_index: 99
-  library_dep_index: 45
-  library_dep_index: 0
-  library_dep_index: 4
-  library_dep_index: 96
-  library_dep_index: 100
-}
-library_dependencies {
-  library_index: 100
   library_dep_index: 101
+  library_dep_index: 103
 }
 library_dependencies {
   library_index: 101
-  library_dep_index: 65
-  library_dep_index: 63
-  library_dep_index: 41
-  library_dep_index: 50
-  library_dep_index: 4
-  library_dep_index: 96
-  library_dep_index: 98
+  library_dep_index: 102
 }
 library_dependencies {
   library_index: 102
+  library_dep_index: 45
+  library_dep_index: 0
+  library_dep_index: 4
+  library_dep_index: 99
   library_dep_index: 103
 }
 library_dependencies {
   library_index: 103
   library_dep_index: 104
-  library_dep_index: 0
 }
 library_dependencies {
   library_index: 104
-  library_dep_index: 0
+  library_dep_index: 65
+  library_dep_index: 63
+  library_dep_index: 41
+  library_dep_index: 50
   library_dep_index: 4
+  library_dep_index: 99
+  library_dep_index: 101
 }
 library_dependencies {
   library_index: 105
-  library_dep_index: 102
-  library_dep_index: 106
+  library_dep_index: 96
 }
 library_dependencies {
-  library_index: 107
-  library_dep_index: 103
-  library_dep_index: 2
+  library_index: 106
+  library_dep_index: 105
+  library_dep_index: 107
 }
 library_dependencies {
   library_index: 108
+  library_dep_index: 96
+  library_dep_index: 2
+}
+library_dependencies {
+  library_index: 109
   library_dep_index: 6
   library_dep_index: 8
 }
 library_dependencies {
-  library_index: 109
+  library_index: 110
   library_dep_index: 39
   library_dep_index: 67
   library_dep_index: 63
   library_dep_index: 69
-  library_dep_index: 98
-  library_dep_index: 100
+  library_dep_index: 101
+  library_dep_index: 103
   library_dep_index: 41
   library_dep_index: 45
   library_dep_index: 52
@@ -2175,19 +2189,20 @@ module_dependencies {
   dependency_index: 5
   dependency_index: 37
   dependency_index: 81
-  dependency_index: 45
+  dependency_index: 86
   dependency_index: 96
+  dependency_index: 45
+  dependency_index: 99
   dependency_index: 60
   dependency_index: 26
   dependency_index: 39
-  dependency_index: 102
   dependency_index: 105
-  dependency_index: 103
-  dependency_index: 107
+  dependency_index: 106
+  dependency_index: 108
   dependency_index: 18
   dependency_index: 19
-  dependency_index: 108
   dependency_index: 109
+  dependency_index: 110
 }
 repositories {
   maven_repo {

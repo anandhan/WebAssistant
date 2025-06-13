@@ -1,3 +1,19 @@
+/**
+ * NetworkService.kt
+ * 
+ * Purpose:
+ * This file defines the NetworkService class, which is responsible for handling network requests to external
+ * APIs, specifically the OpenAI API. It uses OkHttp for HTTP requests and Retrofit for API service definition.
+ * 
+ * Key Components:
+ * - OkHttpClient: Configured with logging, timeouts, and an interceptor to add the OpenAI API key to requests.
+ * - Retrofit: Used to create an instance of the AIService interface, which defines the API endpoints.
+ * - AIService: An interface that defines the API call to process questions using the OpenAI API.
+ * 
+ * The NetworkService is used by other components (e.g., MainActivity, WebViewActivity) to send requests to the
+ * OpenAI API and process the responses.
+ */
+
 package com.example.webassistant
 
 import android.content.Context

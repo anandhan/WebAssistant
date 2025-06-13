@@ -1,0 +1,110 @@
+{
+  "providers": {
+    "att": {
+      "name": "AT&T",
+      "website": "https://www.att.com",
+      "porting_info": {
+        "account_number_location": "Found on your AT&T bill or online account",
+        "pin_requirements": "Account PIN or last 4 digits of SSN",
+        "required_info": [
+          "Account number",
+          "Account PIN or last 4 digits of SSN",
+          "Billing address",
+          "Account holder name",
+          "Phone number to port"
+        ],
+        "common_issues": [
+          {
+            "issue": "Account number not found",
+            "solution": "Check your AT&T bill or online account. Account number is typically 12 digits.",
+            "prevention": "Have your latest bill ready before starting the port process"
+          },
+          {
+            "issue": "PIN verification failed",
+            "solution": "Verify you're using the correct PIN or last 4 digits of SSN",
+            "prevention": "Confirm your PIN before starting the port process"
+          },
+          {
+            "issue": "Account not in good standing",
+            "solution": "Ensure all bills are paid and account is active",
+            "prevention": "Check account status before initiating port"
+          }
+        ]
+      },
+      "port_out_steps": [
+        {
+          "step": 1,
+          "description": "Log into your AT&T account",
+          "details": "Visit att.com and sign in to your account"
+        },
+        {
+          "step": 2,
+          "description": "Locate your account number",
+          "details": "Find your 12-digit account number on your bill or account overview"
+        },
+        {
+          "step": 3,
+          "description": "Verify your PIN",
+          "details": "Confirm your account PIN or last 4 digits of SSN"
+        },
+        {
+          "step": 4,
+          "description": "Ensure account is in good standing",
+          "details": "Check that all bills are paid and account is active"
+        }
+      ],
+      "xfinity_port_in_guide": {
+        "prerequisites": [
+          "Active AT&T account",
+          "Valid account number",
+          "Correct PIN",
+          "Account in good standing"
+        ],
+        "steps": [
+          {
+            "step": 1,
+            "description": "Start Xfinity Mobile port process",
+            "details": "Begin port process on Xfinity Mobile website or app"
+          },
+          {
+            "step": 2,
+            "description": "Enter AT&T account information",
+            "details": "Provide AT&T account number and PIN"
+          },
+          {
+            "step": 3,
+            "description": "Verify information",
+            "details": "Confirm all provided information is correct"
+          },
+          {
+            "step": 4,
+            "description": "Complete port process",
+            "details": "Follow Xfinity Mobile instructions to complete port"
+          }
+        ],
+        "estimated_time": "2-24 hours",
+        "important_notes": [
+          "Keep your AT&T service active until port is complete",
+          "Do not cancel AT&T service before port is complete",
+          "Have your AT&T bill ready for reference"
+        ]
+      }
+    }
+  },
+  "general_porting_info": {
+    "common_terms": {
+      "porting": "The process of moving a phone number from one carrier to another",
+      "account_number": "Unique identifier for your carrier account",
+      "pin": "Personal Identification Number used to verify account ownership",
+      "port_in": "Moving a number to Xfinity Mobile",
+      "port_out": "Moving a number from another carrier"
+    },
+    "best_practices": [
+      "Have all required information ready before starting",
+      "Keep current service active until port is complete",
+      "Don't cancel current service before port is complete",
+      "Have a backup phone if possible",
+      "Start port process during business hours"
+    ]
+  }
+} 

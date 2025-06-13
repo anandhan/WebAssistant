@@ -1,3 +1,24 @@
+/**
+ * MainActivity.kt
+ * 
+ * Purpose:
+ * This file defines the main entry point of the WebAssistant app. It sets up the UI using Jetpack Compose
+ * and manages the WebView for displaying web content. The app allows users to navigate to a URL, view the
+ * webpage, and interact with an AI assistant that can answer questions about the webpage content.
+ * 
+ * Key Components:
+ * - formatUrl: A utility function that ensures URLs are properly formatted with 'https://' if missing.
+ * - MainActivity: The main activity class that initializes the NetworkService and sets up the Compose UI.
+ * - WebAssistantScreen: A Composable function that defines the UI layout, including the URL input, WebView,
+ *   and chat interface. It also handles user interactions, such as sending messages to the AI assistant.
+ * - WebAppInterface: A class that provides a JavaScript interface for the WebView to extract webpage content.
+ * - ChatMessage: A Composable function that displays individual chat messages with different styles for user
+ *   and assistant messages.
+ * 
+ * The app integrates with an AI service (via NetworkService) to process user questions and provide responses
+ * based on the current webpage content.
+ */
+
 package com.example.webassistant
 
 import android.os.Bundle
@@ -35,11 +56,20 @@ class MainActivity : ComponentActivity() {
     var webView: WebView? = null
     var onPageChanged: (() -> Unit)? = null
 
-    inner class WebAppInterface {
-        @JavascriptInterface
-        fun onContentReceived(content: String) {
-            currentWebContent = content
-            Log.d(TAG, "Received web content: ${content.take(100)}...")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        // Initialize ConfigManager and NetworkService
+        ConfigManager.initialize(this)
+        networkService = NetworkService()
+
+        setContent {
+            WebAssistantScreen(
+                networkService = networkService,
+                getWebContent = { currentWebContent },
+                onExtractContent = { extractWebContent() },
+                onPageChanged = { onPageChanged?.invoke() }
+            )
         }
     }
 
@@ -59,23 +89,6 @@ class MainActivity : ComponentActivity() {
             extractContent();
         """.trimIndent(), null)
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        // Initialize ConfigManager and NetworkService
-        ConfigManager.initialize(this)
-        networkService = NetworkService()
-
-        setContent {
-            WebAssistantScreen(
-                networkService = networkService,
-                getWebContent = { currentWebContent },
-                onExtractContent = { extractWebContent() },
-                onPageChanged = { onPageChanged?.invoke() }
-            )
-        }
-    }
 }
 
 @Composable
@@ -93,6 +106,30 @@ fun WebAssistantScreen(
     var urlInput by remember { mutableStateOf("https://www.att.com") }
     var webView by remember { mutableStateOf<WebView?>(null) }
     val scope = rememberCoroutineScope()
+
+    class WebAppInterface {
+        @JavascriptInterface
+        fun getWebContent(): String {
+            return webView?.let { view ->
+                var result = "{}"
+                view.evaluateJavascript("""
+                    (function() {
+                        return {
+                            title: document.title,
+                            text: document.body.innerText,
+                            links: Array.from(document.getElementsByTagName('a')).map(a => a.href),
+                            headings: Array.from(document.getElementsByTagName('h1')).map(h => h.innerText),
+                            paragraphs: Array.from(document.getElementsByTagName('p')).map(p => p.innerText),
+                            lists: Array.from(document.querySelectorAll('ul, ol')).map(list => 
+                                Array.from(list.getElementsByTagName('li')).map(li => li.innerText)
+                            )
+                        }
+                    })()
+                """.trimIndent()) { value -> result = value }
+                result
+            } ?: "{}"
+        }
+    }
 
     // Set up page change callback
     LaunchedEffect(Unit) {
@@ -153,9 +190,8 @@ fun WebAssistantScreen(
                             chatHistory = listOf()
                         }
                     }
-                    addJavascriptInterface((context as MainActivity).WebAppInterface(), "Android")
+                    addJavascriptInterface(WebAppInterface(), "Android")
                     loadUrl(formatUrl(urlInput))
-                    (context as MainActivity).webView = this
                     webView = this
                 }
             },
@@ -186,16 +222,15 @@ fun WebAssistantScreen(
 
             // Chat History
             chatHistory.forEach { message ->
-                Text(
-                    text = "${message.role}: ${message.content}",
-                    modifier = Modifier.padding(vertical = 4.dp)
-                )
+                ChatMessage(message)
             }
 
             // Loading Indicator
             if (isLoading) {
                 CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                    modifier = Modifier
+                        .size(24.dp)
+                        .align(Alignment.CenterHorizontally)
                 )
             }
 
@@ -210,7 +245,8 @@ fun WebAssistantScreen(
                     value = userInput,
                     onValueChange = { userInput = it },
                     modifier = Modifier.weight(1f),
-                    placeholder = { Text("Ask about the webpage content...") }
+                    placeholder = { Text("Ask a question...") },
+                    enabled = !isLoading
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
@@ -219,17 +255,7 @@ fun WebAssistantScreen(
                             scope.launch {
                                 isLoading = true
                                 try {
-                                    // Extract content if not already done
-                                    if (!hasExtractedContent) {
-                                        onExtractContent()
-                                        hasExtractedContent = true
-                                    }
-
                                     val webContent = getWebContent()
-                                    Log.d(TAG, "Sending request to OpenAI API")
-                                    Log.d(TAG, "Web content length: ${webContent.length}")
-                                    Log.d(TAG, "Extracted web content: $webContent")
-                                    
                                     val systemMessage = """
                                         You are a helpful assistant analyzing a webpage. 
                                         Use the following webpage content to answer the user's question:
@@ -249,42 +275,56 @@ fun WebAssistantScreen(
                                         )
                                     )
                                     
-                                    Log.d(TAG, "Received response: $response")
                                     if (response.choices.isNotEmpty()) {
                                         val aiResponse = response.choices[0].message.content
-                                        Log.d(TAG, "AI response content: $aiResponse")
-                                        chatHistory = chatHistory + listOf(
-                                            Message("user", userInput),
-                                            Message("assistant", aiResponse)
-                                        )
+                                        chatHistory = chatHistory + Message("user", userInput) + Message("assistant", aiResponse)
                                     } else {
-                                        Log.e(TAG, "Empty choices in response")
-                                        chatHistory = chatHistory + listOf(
-                                            Message("user", userInput),
-                                            Message("assistant", "Sorry, I couldn't generate a response.")
-                                        )
+                                        chatHistory = chatHistory + Message("user", userInput) + Message("assistant", "Sorry, I couldn't generate a response.")
                                     }
+                                    userInput = ""
+                                    hasExtractedContent = true
                                 } catch (e: Exception) {
-                                    Log.e(TAG, "Error processing request", e)
-                                    Log.e(TAG, "Error message: ${e.message}")
-                                    Log.e(TAG, "Error cause: ${e.cause}")
-                                    e.printStackTrace()
-                                    chatHistory = chatHistory + listOf(
-                                        Message("user", userInput),
-                                        Message("assistant", "Sorry, there was an error processing your request: ${e.message}")
-                                    )
+                                    Log.e(TAG, "Error sending message", e)
+                                    chatHistory = chatHistory + Message("user", userInput) + Message("assistant", "Sorry, I encountered an error. Please try again.")
                                 } finally {
                                     isLoading = false
-                                    userInput = ""
                                 }
                             }
                         }
                     },
-                    enabled = userInput.isNotBlank()
+                    enabled = !isLoading && userInput.isNotBlank()
                 ) {
                     Text("Send")
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun ChatMessage(message: Message) {
+    val alignment = if (message.role == "user") Alignment.End else Alignment.Start
+    val backgroundColor = if (message.role == "user") 
+        MaterialTheme.colorScheme.primary 
+    else 
+        MaterialTheme.colorScheme.secondary
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        horizontalAlignment = alignment
+    ) {
+        Surface(
+            color = backgroundColor,
+            shape = MaterialTheme.shapes.medium,
+            modifier = Modifier.padding(4.dp)
+        ) {
+            Text(
+                text = message.content,
+                color = MaterialTheme.colorScheme.onPrimary,
+                modifier = Modifier.padding(8.dp)
+            )
         }
     }
 } 

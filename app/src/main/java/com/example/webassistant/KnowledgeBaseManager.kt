@@ -1,3 +1,24 @@
+/**
+ * KnowledgeBaseManager.kt
+ * 
+ * Purpose:
+ * This file defines the KnowledgeBaseManager class, which is responsible for loading and managing a JSON-based
+ * knowledge base stored in the app's assets folder. The knowledge base contains provider-specific information
+ * (e.g., porting steps, common issues, Xfinity port-in guides) and general porting information.
+ * 
+ * Key Components:
+ * - loadKnowledgeBase: Loads the JSON knowledge base from the assets folder during initialization.
+ * - getProviderInfo: Retrieves information for a specific provider (e.g., AT&T, Verizon, T-Mobile).
+ * - getPortingSteps: Returns a list of porting steps for a given provider.
+ * - getCommonIssues: Returns a list of common issues and their solutions for a given provider.
+ * - getXfinityPortInGuide: Returns a detailed guide for porting a number to Xfinity Mobile from a given provider.
+ * - getGeneralPortingInfo: Returns general porting information, including common terms and best practices.
+ * - searchKnowledgeBase: Performs a simple text-based search across the knowledge base for a given query.
+ * 
+ * The KnowledgeBaseManager is used by WebViewActivity to provide context-aware responses to user questions
+ * based on the detected provider and the content of the knowledge base.
+ */
+
 package com.example.webassistant
 
 import android.content.Context
