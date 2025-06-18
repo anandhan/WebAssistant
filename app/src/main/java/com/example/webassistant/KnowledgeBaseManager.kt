@@ -28,10 +28,6 @@ import java.io.IOException
 class KnowledgeBaseManager(private val context: Context) {
     private var knowledgeBase: JSONObject? = null
 
-    init {
-        loadKnowledgeBase()
-    }
-
     internal fun loadKnowledgeBase() {
         try {
             val jsonString = context.assets.open("knowledge_base.json").bufferedReader().use { it.readText() }

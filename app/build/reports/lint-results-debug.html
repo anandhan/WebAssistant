@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 30 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 31 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Jun 13 17:50:21 EDT 2025 by AGP (8.1.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Jun 17 21:11:46 EDT 2025 by AGP (8.1.0)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,7 +187,7 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (17)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (18)</a>
       <a class="mdl-navigation__link" href="#SetJavaScriptEnabled"><i class="material-icons warning-icon">warning</i>Using <code>setJavaScriptEnabled</code> (2)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (1)</a>
@@ -213,7 +213,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">17</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
@@ -362,7 +362,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 53 </span>    implementation <span class="string">"androidx.compose.ui:ui-tooling-preview:1.5.4"</span>
 <span class="lineno"> 54 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 12 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 13 More Occurrences...</button>
 <div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">A newer version of androidx.compose.material:material than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
 <span class="lineno"> 49 </span>    implementation <span class="string">'androidx.constraintlayout:constraintlayout:2.1.4'</span>
@@ -435,40 +435,49 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 62 </span>    implementation <span class="warning"><span class="string">"androidx.compose.material3:material3:1.1.2"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 63 </span>    
 <span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span></pre>
+<span class="lineno"> 65 </span>    testImplementation <span class="string">'org.mockito:mockito-core:5.3.1'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:65</span>: <span class="message">A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1</span><br /><pre class="errorlines">
-<span class="lineno"> 62 </span>    implementation <span class="string">"androidx.compose.material3:material3:1.1.2"</span>
-<span class="lineno"> 63 </span>    
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:67</span>: <span class="message">A newer version of androidx.test:core than 1.5.0 is available: 1.6.1</span><br /><pre class="errorlines">
 <span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="caretline"><span class="lineno"> 65 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.1.5'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></pre>
+<span class="lineno"> 65 </span>    testImplementation <span class="string">'org.mockito:mockito-core:5.3.1'</span>
+<span class="lineno"> 66 </span>    testImplementation <span class="string">'org.mockito.kotlin:mockito-kotlin:5.1.0'</span>
+<span class="caretline"><span class="lineno"> 67 </span>    testImplementation <span class="warning"><span class="string">'androidx.test:core:1.5.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 68 </span>    testImplementation <span class="string">'org.robolectric:robolectric:4.11.1'</span>
+<span class="lineno"> 69 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="lineno"> 70 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:66</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1</span><br /><pre class="errorlines">
-<span class="lineno"> 63 </span>    
-<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="caretline"><span class="lineno"> 66 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
-<span class="lineno"> 69 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:69</span>: <span class="message">A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1</span><br /><pre class="errorlines">
+<span class="lineno"> 66 </span>    testImplementation <span class="string">'org.mockito.kotlin:mockito-kotlin:5.1.0'</span>
+<span class="lineno"> 67 </span>    testImplementation <span class="string">'androidx.test:core:1.5.0'</span>
+<span class="lineno"> 68 </span>    testImplementation <span class="string">'org.robolectric:robolectric:4.11.1'</span>
+<span class="caretline"><span class="lineno"> 69 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.1.5'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 70 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="lineno"> 71 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="lineno"> 72 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:67</span>: <span class="message">A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 64 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="caretline"><span class="lineno"> 67 </span>    androidTestImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 68 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
-<span class="lineno"> 69 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:70</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1</span><br /><pre class="errorlines">
+<span class="lineno"> 67 </span>    testImplementation <span class="string">'androidx.test:core:1.5.0'</span>
+<span class="lineno"> 68 </span>    testImplementation <span class="string">'org.robolectric:robolectric:4.11.1'</span>
+<span class="lineno"> 69 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="caretline"><span class="lineno"> 70 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 71 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="lineno"> 72 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
+<span class="lineno"> 73 </span>} </pre>
 
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:68</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 65 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
-<span class="lineno"> 66 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
-<span class="lineno"> 67 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
-<span class="caretline"><span class="lineno"> 68 </span>    debugImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 69 </span>} </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:71</span>: <span class="message">A newer version of androidx.compose.ui:ui-test-junit4 than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 68 </span>    testImplementation <span class="string">'org.robolectric:robolectric:4.11.1'</span>
+<span class="lineno"> 69 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="lineno"> 70 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="caretline"><span class="lineno"> 71 </span>    androidTestImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 72 </span>    debugImplementation <span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span>
+<span class="lineno"> 73 </span>} </pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:72</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling than 1.5.4 is available: 1.8.2</span><br /><pre class="errorlines">
+<span class="lineno"> 69 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.5'</span>
+<span class="lineno"> 70 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="lineno"> 71 </span>    androidTestImplementation <span class="string">"androidx.compose.ui:ui-test-junit4:1.5.4"</span>
+<span class="caretline"><span class="lineno"> 72 </span>    debugImplementation <span class="warning"><span class="string">"androidx.compose.ui:ui-tooling:1.5.4"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 73 </span>} </pre>
 
 </div>
 </div>
@@ -509,23 +518,23 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:155</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
-<span class="lineno"> 152 </span>            factory = { context ->
-<span class="lineno"> 153 </span>                WebView(context).apply {
-<span class="lineno"> 154 </span>                    settings.apply {
-<span class="caretline"><span class="lineno"> 155 </span>                        <span class="warning">javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 156 </span>                        domStorageEnabled = <span class="keyword">true</span>
-<span class="lineno"> 157 </span>                        setSupportZoom(<span class="keyword">true</span>)
-<span class="lineno"> 158 </span>                        builtInZoomControls = <span class="keyword">true</span></pre>
+<span class="location"><a href="../../src/main/java/com/example/webassistant/MainActivity.kt">../../src/main/java/com/example/webassistant/MainActivity.kt</a>:183</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
+<span class="lineno"> 180 </span>            factory = { context ->
+<span class="lineno"> 181 </span>                WebView(context).apply {
+<span class="lineno"> 182 </span>                    settings.apply {
+<span class="caretline"><span class="lineno"> 183 </span>                        <span class="warning">javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 184 </span>                        domStorageEnabled = <span class="keyword">true</span>
+<span class="lineno"> 185 </span>                        setSupportZoom(<span class="keyword">true</span>)
+<span class="lineno"> 186 </span>                        builtInZoomControls = <span class="keyword">true</span></pre>
 
-<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:40</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
-<span class="lineno">  37 </span>        chatContainer = findViewById(R.id.chatContainer)
-<span class="lineno">  38 </span>
-<span class="lineno">  39 </span>        <span class="comment">// Configure WebView</span>
-<span class="caretline"><span class="lineno">  40 </span>        <span class="warning">webView.settings.javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  41 </span>        webView.webViewClient = <span class="keyword">object</span> : WebViewClient() {
-<span class="lineno">  42 </span>            override <span class="keyword">fun</span> onPageFinished(view: WebView?, url: String?) {
-<span class="lineno">  43 </span>                <span class="keyword">super</span>.onPageFinished(view, url)
+<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:63</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully</span><br /><pre class="errorlines">
+<span class="lineno">  60 </span>        <span class="keyword">val</span> url = intent.getStringExtra(<span class="string">"url"</span>) ?: <span class="string">"https://www.att.com"</span>
+<span class="lineno">  61 </span>        
+<span class="lineno">  62 </span>        <span class="comment">// Configure WebView</span>
+<span class="caretline"><span class="lineno">  63 </span>        <span class="warning">webView.settings.javaScriptEnabled = <span class="keyword">true</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  64 </span>        webView.webViewClient = <span class="keyword">object</span> : WebViewClient() {
+<span class="lineno">  65 </span>            override <span class="keyword">fun</span> onPageFinished(view: WebView?, url: String?) {
+<span class="lineno">  66 </span>                <span class="keyword">super</span>.onPageFinished(view, url)
 </pre>
 
 </div>
@@ -780,14 +789,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:224</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 221 </span>
-<span class="lineno"> 222 </span>    private <span class="keyword">fun</span> addMessageToChat(sender: String, message: String) {
-<span class="lineno"> 223 </span>        <span class="keyword">val</span> messageView = TextView(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 224 </span>            text = <span class="warning"><span class="string">"$sender: $message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 225 </span>            setPadding(<span class="number">0</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">8</span>)
-<span class="lineno"> 226 </span>        }
-<span class="lineno"> 227 </span>        chatContainer.addView(messageView)
+<span class="location"><a href="../../src/main/java/com/example/webassistant/WebViewActivity.kt">../../src/main/java/com/example/webassistant/WebViewActivity.kt</a>:248</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 245 </span>
+<span class="lineno"> 246 </span>    private <span class="keyword">fun</span> addMessageToChat(sender: String, message: String) {
+<span class="lineno"> 247 </span>        <span class="keyword">val</span> messageView = TextView(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno"> 248 </span>            text = <span class="warning"><span class="string">"$sender: $message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 249 </span>            setPadding(<span class="number">0</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">8</span>)
+<span class="lineno"> 250 </span>        }
+<span class="lineno"> 251 </span>        chatContainer.addView(messageView)
 </pre>
 
 </div>

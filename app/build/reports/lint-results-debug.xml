@@ -14,7 +14,7 @@
         errorLine1="        targetSdk 34"
         errorLine2="        ~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="13"
             column="9"/>
     </issue>
@@ -30,7 +30,7 @@
         errorLine1="    implementation &apos;androidx.core:core-ktx:1.12.0&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="46"
             column="20"/>
     </issue>
@@ -46,7 +46,7 @@
         errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.6.1&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="47"
             column="20"/>
     </issue>
@@ -62,7 +62,7 @@
         errorLine1="    implementation &apos;com.google.android.material:material:1.11.0&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="48"
             column="20"/>
     </issue>
@@ -78,7 +78,7 @@
         errorLine1="    implementation &apos;androidx.constraintlayout:constraintlayout:2.1.4&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="49"
             column="20"/>
     </issue>
@@ -94,7 +94,7 @@
         errorLine1="    implementation &quot;androidx.compose.ui:ui:1.5.4&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="51"
             column="20"/>
     </issue>
@@ -110,7 +110,7 @@
         errorLine1="    implementation &quot;androidx.compose.material:material:1.5.4&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="52"
             column="20"/>
     </issue>
@@ -126,7 +126,7 @@
         errorLine1="    implementation &quot;androidx.compose.ui:ui-tooling-preview:1.5.4&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="53"
             column="20"/>
     </issue>
@@ -142,7 +142,7 @@
         errorLine1="    implementation &apos;androidx.lifecycle:lifecycle-runtime-ktx:2.7.0&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="54"
             column="20"/>
     </issue>
@@ -158,7 +158,7 @@
         errorLine1="    implementation &apos;androidx.activity:activity-compose:1.8.2&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="55"
             column="20"/>
     </issue>
@@ -174,7 +174,7 @@
         errorLine1="    implementation &apos;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="59"
             column="20"/>
     </issue>
@@ -190,7 +190,7 @@
         errorLine1="    implementation &apos;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="60"
             column="20"/>
     </issue>
@@ -206,7 +206,7 @@
         errorLine1="    implementation &apos;androidx.webkit:webkit:1.8.0&apos;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="61"
             column="20"/>
     </issue>
@@ -222,9 +222,25 @@
         errorLine1="    implementation &quot;androidx.compose.material3:material3:1.1.2&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
             line="62"
             column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.test:core than 1.5.0 is available: 1.6.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    testImplementation &apos;androidx.test:core:1.5.0&apos;"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
+            line="67"
+            column="24"/>
     </issue>
 
     <issue
@@ -238,8 +254,8 @@
         errorLine1="    androidTestImplementation &apos;androidx.test.ext:junit:1.1.5&apos;"
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
-            line="65"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
+            line="69"
             column="31"/>
     </issue>
 
@@ -254,8 +270,8 @@
         errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.5.1&apos;"
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
-            line="66"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
+            line="70"
             column="31"/>
     </issue>
 
@@ -270,8 +286,8 @@
         errorLine1="    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:1.5.4&quot;"
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
-            line="67"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
+            line="71"
             column="31"/>
     </issue>
 
@@ -286,8 +302,8 @@
         errorLine1="    debugImplementation &quot;androidx.compose.ui:ui-tooling:1.5.4&quot;"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build.gradle"
-            line="68"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/build.gradle"
+            line="72"
             column="25"/>
     </issue>
 
@@ -304,8 +320,8 @@
         errorLine1="                        javaScriptEnabled = true"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/MainActivity.kt"
-            line="155"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/MainActivity.kt"
+            line="183"
             column="25"/>
     </issue>
 
@@ -322,8 +338,8 @@
         errorLine1="        webView.settings.javaScriptEnabled = true"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/WebViewActivity.kt"
-            line="40"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/WebViewActivity.kt"
+            line="63"
             column="9"/>
     </issue>
 
@@ -336,7 +352,7 @@
         summary="Obsolete SDK_INT Version Check"
         explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for.&#xA;&#xA;Similarly, it also looks for resources in `-vNN` folders, such as `values-v14` where the version qualifier is less than or equal to the `minSdkVersion`, where the contents should be merged into the best folder.">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26"/>
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26"/>
     </issue>
 
     <issue
@@ -350,7 +366,7 @@
         errorLine1="    &lt;color name=&quot;purple_200&quot;>#FFBB86FC&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/values/colors.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/values/colors.xml"
             line="3"
             column="12"/>
     </issue>
@@ -366,7 +382,7 @@
         errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
         errorLine2="^">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
             line="2"
             column="1"/>
     </issue>
@@ -382,7 +398,7 @@
         errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
         errorLine2="^">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml"
             line="2"
             column="1"/>
     </issue>
@@ -398,7 +414,7 @@
         errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
         errorLine2="^">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
             line="2"
             column="1"/>
     </issue>
@@ -414,7 +430,7 @@
         errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
         errorLine2="^">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml"
             line="2"
             column="1"/>
     </issue>
@@ -432,7 +448,7 @@
         errorLine1="        &lt;EditText"
         errorLine2="         ~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
             line="26"
             column="10"/>
     </issue>
@@ -450,8 +466,8 @@
         errorLine1="            text = &quot;$sender: $message&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/WebViewActivity.kt"
-            line="224"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/java/com/example/webassistant/WebViewActivity.kt"
+            line="248"
             column="20"/>
     </issue>
 
@@ -466,7 +482,7 @@
         errorLine1="            android:hint=&quot;Type your message...&quot;"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
             line="31"
             column="13"/>
     </issue>
@@ -482,7 +498,7 @@
         errorLine1="            android:text=&quot;Send&quot; />"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
+            file="/Users/anandhansubbiah/Cursor/WebAssistant/app/src/main/res/layout/activity_web_view.xml"
             line="40"
             column="13"/>
     </issue>

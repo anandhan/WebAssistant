@@ -1,6 +1,6 @@
-#Fri Jun 13 18:15:37 EDT 2025
-base.0=/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
-base.1=/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
+#Tue Jun 17 21:11:47 EDT 2025
+base.0=/Users/anandhansubbiah/Cursor/WebAssistant/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+base.1=/Users/anandhansubbiah/Cursor/WebAssistant/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.0=classes.dex
 path.1=classes2.dex
 renamed.0=classes.dex

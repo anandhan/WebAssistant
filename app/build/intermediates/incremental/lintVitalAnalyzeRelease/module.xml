@@ -1,6 +1,6 @@
 <lint-module
     format="1"
-    dir="/Users/anandhansubbiah/Documents/Cursor/WebAssistant/app"
+    dir="/Users/anandhansubbiah/Cursor/WebAssistant/app"
     name=":app"
     type="APP"
     maven="WebAssistant:app:"

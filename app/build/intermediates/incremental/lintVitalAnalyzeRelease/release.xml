@@ -6,7 +6,7 @@
     mergedManifest="build/intermediates/merged_manifest/release/AndroidManifest.xml"
     proguardFiles="build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.1.0:proguard-rules.pro"
     partialResultsDir="build/intermediates/lint_vital_partial_results/release/out"
-    desugaredMethodsFiles="/Users/anandhansubbiah/.gradle/caches/transforms-4/3916e0b49856daafcbdaa9d6a1701c86/transformed/D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="/Users/anandhansubbiah/.gradle/caches/transforms-3/5599158663d1f1c3a523c4036ff8006a/transformed/D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -25,6 +25,6 @@
       applicationId="com.example.webassistant"
       generatedSourceFolders="build/generated/ap_generated_sources/release/out"
       generatedResourceFolders="build/generated/res/resValues/release"
-      desugaredMethodsFiles="/Users/anandhansubbiah/.gradle/caches/transforms-4/3916e0b49856daafcbdaa9d6a1701c86/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/Users/anandhansubbiah/.gradle/caches/transforms-3/5599158663d1f1c3a523c4036ff8006a/transformed/D8BackportedDesugaredMethods.txt">
   </mainArtifact>
 </variant>
